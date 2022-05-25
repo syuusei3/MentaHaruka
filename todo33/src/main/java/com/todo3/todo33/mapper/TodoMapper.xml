@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.todo3.todo33.mapper.TodoMapper">
+  
+  <select id="selectAll" resultType="com.todo3.todo33.entity.Todo">
+    select * from todo_items
+  </select>
+
+  <insert id="add" parameterType="com.todo3.todo33.entity.Todo">
+    insert into todo_items (title,content)
+    values (#{title}, #{content})
+  </insert>
+
+  <delete id="delete" parameterType="com.todo3.todo33.entity.Todo">
+    delete from todo_items where id=#{id}
+  </delete>
+
+
+</mapper>
